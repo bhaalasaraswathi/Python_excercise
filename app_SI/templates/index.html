@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Simple Interest Calculator</h1>
+
+    <form method="GET" action="/calculate" style ="width: 500px; margin: left;">
+    <input type="number" name="principal" class="form-control mt-3" placeholder="Enter the Principal Amount">
+    <input type="number" name="years" class="form-control mt-3 mb-3" placeholder="Enter the Time in Years">
+
+    <select name="category" class="form-select">
+        <option value="">Select Loan Category</option>
+        <option value="home_loan">Home Loan</option>
+        <option value="personal_loan">Personal Loan</option>
+        <option value="car_loan">Car Loan</option>
+    </select>
+    <button class="btn btn-primary mt-3 mb-3">Calculate</button>
+    
+    {% if si %}
+    <div class="alert alert-success" role="alert">
+        Calculated Simple Interest: {{ si }}
+    </div>
+    {% endif %}
+    </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
